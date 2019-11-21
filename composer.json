@@ -1,4 +1,19 @@
 {
-    "name": "enpama/epm-core",
-    "description": "Elementary objects and functions for epm based modules."
+	"name" : "enpama/epm-core",
+	"type" : "library",
+	"license" : "MIT",
+	"minimum-stability" : "stable",
+	"authors" : [{
+			"name" : "Kadir Yamuk",
+			"email" : "kadir@enpama.com",
+			"homepage" : "https://piseq.blog",
+			"role" : "Creator"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"epm\\core\\" : "core",
+			"epm\\object\\": "object"
+		}
+	}
 }
