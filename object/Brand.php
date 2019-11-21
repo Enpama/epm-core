@@ -21,8 +21,14 @@ class Brand extends Model
 
     public $show = true;
 
-    public function __construct(int $id = 0, int $langId = 0)
+    public function __construct(int $id = 0, int $lang_id = 0)
     {
-        parent::__construct();
+        
     }
+    
+    public function load(array $data)
+    {
+        
+    }
+
 }

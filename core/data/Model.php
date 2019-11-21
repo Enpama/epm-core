@@ -2,7 +2,7 @@
 declare(strict_types = 1);
 namespace epm\core\data;
 
-class Model
+abstract class Model implements ModelInterface
 {
 
     /** @var Definition $definition */
@@ -13,15 +13,16 @@ class Model
 
     /** @var int $lang_id */
     public $lang_id = 0;
-
+    
     public function __construct(int $id = 0, int $lang_id = 0)
-    {}
-
-    public function constructByKey(string $dbKey, string $dbValue)
     {
-    /**
-     *
-     * @todo to be implemented
-     */
+        $this->id = $id;
+        $this->lang_id = $lang_id;
+    }
+    
+    public function load(array $data)
+    {
+        $this->id = (int)$data['id'];
+        $this->lang_id = (int)$data['lang_id'];
     }
 }
