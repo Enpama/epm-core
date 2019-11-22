@@ -9,12 +9,17 @@ class ComposerStaticInit0e31281ab9697b66d43efc6ee60953cd
     public static $prefixLengthsPsr4 = array (
         'e' => 
         array (
+            'epm\\type\\' => 9,
             'epm\\object\\' => 11,
             'epm\\core\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'epm\\type\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/type',
+        ),
         'epm\\object\\' => 
         array (
             0 => __DIR__ . '/../..' . '/object',

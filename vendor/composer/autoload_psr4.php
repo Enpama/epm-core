@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'epm\\type\\' => array($baseDir . '/type'),
     'epm\\object\\' => array($baseDir . '/object'),
     'epm\\core\\' => array($baseDir . '/core'),
 );

@@ -13,7 +13,9 @@
 	"autoload" : {
 		"psr-4" : {
 			"epm\\core\\" : "core",
-			"epm\\object\\": "object"
+			"epm\\object\\" : "object",
+			"epm\\type\\" : "type",
+			"epm\\types\\" : "types"
 		}
 	}
 }
