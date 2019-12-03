@@ -1,50 +1,32 @@
 <?php
 declare(strict_types = 1);
-
 namespace epm\core\database;
 
-class Connection implements ConnectionInterface
+class Connection
 {
 
-    public function __construct()
-    {}
+    const MYSQL = 0;
 
-    public function prepare(string $statement, array $options): Connection
-    {}
+    const NEO4J = 1;
 
-    public function prepareLast(): Connection
-    {}
+    const FILE = 2;
 
-    public function setFree()
-    {}
+    const MEMORY = 3;
 
-    public function fetchAll(): array
-    {}
+    /**
+     *
+     * @var int $database_type
+     */
+    private $database_type;
 
-    public function bindParam(string $parameter, string $variable, $type = 'string', $length = null, $options = null): Connection
-    {}
+    private $database;
 
-    public function execute(bool $debug): bool
-    {}
+    public function __construct($database_type = self::MYSQL, string $server, string $name, string $user, string $password, string $prefix)
+    {
+        $this->database_type = $database_type;
 
-    public function bindBool(string $parameter, bool $variable): Connection
-    {}
-
-    public function bindFloat(string $parameter, float $variable): Connection
-    {}
-
-    public function bindDouble(string $parameter, float $variable): Connection
-    {}
-
-    public function fetch(): array
-    {}
-
-    public function bindString(string $parameter, string $variable): Connection
-    {}
-
-    public function getExecutionTime(): float
-    {}
-
-    public function bindInt(string $parameter, int $variable): Connection
-    {}
+        if ($this->database_type === self::MYSQL) {
+            $this->database = new MySQL($server, $name, $user, $password, $prefix);
+        }
+    }
 }

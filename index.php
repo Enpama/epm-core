@@ -1,8 +1,6 @@
 <?php
 require ('vendor/autoload.php');
-use epm\object\Brand;
+use epm\core\database\MySQL;
 
-$b = new Brand();
-$b->title->add(1, 'test')->add(2, 'test en');
-echo 'init';
-var_dump($b);
+$m = new MySQL('', '', '', '', '');
+var_dump($m);
