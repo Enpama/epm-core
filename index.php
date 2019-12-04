@@ -1,6 +1,7 @@
 <?php
 require ('vendor/autoload.php');
-use epm\core\database\MySQL;
+use epm\core\lib\Settings;
 
-$m = new MySQL('', '', '', '', '');
-var_dump($m);
+echo Settings::get('database.name') . "\n";
+echo Settings::get('security.cookie_key') . "\n";
+echo Settings::get('test1.test2.test3') . "\n";

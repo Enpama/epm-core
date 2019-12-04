@@ -3,22 +3,23 @@ declare(strict_types = 1);
 namespace epm\core\database;
 
 use PDO;
-use PDOException;
 
 class MySQL extends Database
 {
 
+    /**
+     *
+     * @var \PDO $pdo
+     */
     private $pdo;
 
     public function __construct(string $server, string $name, string $user, string $password, string $prefix)
     {
         parent::__construct($server, $name, $user, $password, $prefix);
 
-        try {
-            $this->pdo = new PDO('mysql:host=' . $this->server . ';dbname=' . $this->name . ';charset=utf8', $this->user, $this->password);
-        } catch (PDOException $e) {
-            die('Database construction error');
-        }
+        $this->pdo = new PDO('mysql:host=' . $this->server . ';dbname=' . $this->name . ';charset=utf8', $this->user,
+            $this->password);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function prepare(string $statement, array $options): Database

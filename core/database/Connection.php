@@ -21,7 +21,8 @@ class Connection
 
     private $database;
 
-    public function __construct($database_type = self::MYSQL, string $server, string $name, string $user, string $password, string $prefix)
+    public function __construct($database_type = self::MYSQL, string $server, string $name, string $user,
+        string $password, string $prefix)
     {
         $this->database_type = $database_type;
 
