@@ -7,10 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
-    'epm\\types\\' => array($baseDir . '/types'),
-    'epm\\type\\' => array($baseDir . '/type'),
-    'epm\\object\\' => array($baseDir . '/object'),
-    'epm\\core\\' => array($baseDir . '/core'),
+    'epm\\' => array($baseDir . '/'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),

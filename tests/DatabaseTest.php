@@ -3,8 +3,9 @@ declare(strict_types = 1);
 namespace tests;
 
 use PHPUnit\Framework\TestCase;
-use epm\core\database\Connection;
-use epm\core\lib\Settings;
+use epm\database\Connection;
+use epm\lib\Settings;
+use epm\database\ConnectionManager;
 
 class DatabaseTest extends TestCase
 {
@@ -38,6 +39,28 @@ class DatabaseTest extends TestCase
         try {
             $con = new Connection(Connection::MYSQL, Settings::get('database.server'), Settings::get('database.name'),
                 Settings::get('database.user'), Settings::get('database.password'), Settings::get('database.prefix'));
+            $this->assertTrue(true);
+        } catch (\PDOException $e) {
+            $this->assertTrue(false, $e->getMessage());
+        }
+    }
+
+    public function testConnectionManager()
+    {
+        $con = null;
+        try {
+            $con = ConnectionManager::get();
+            $this->assertTrue(true);
+        } catch (\PDOException $e) {
+            $this->assertTrue(false, $e->getMessage());
+        }
+    }
+
+    public function testConnectionManagerMySQL()
+    {
+        $con = null;
+        try {
+            $con = ConnectionManager::getMySQL();
             $this->assertTrue(true);
         } catch (\PDOException $e) {
             $this->assertTrue(false, $e->getMessage());

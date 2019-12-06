@@ -1,8 +1,8 @@
 <?php
 declare(strict_types = 1);
-namespace epm\core\lib;
+namespace epm\lib;
 
-use epm\core\exceptions\SettingsNotFound;
+use epm\exceptions\SettingsNotFound;
 
 class Settings
 {
@@ -19,7 +19,7 @@ class Settings
 
     public function __construct()
     {
-        $this->data = require (__DIR__ . '../../../' . $this->file);
+        $this->data = require (__DIR__ . '../../' . $this->file);
     }
 
     public function getvalue(string $key): string

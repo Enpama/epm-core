@@ -1,6 +1,6 @@
 <?php
 declare(strict_types = 1);
-namespace epm\core\database;
+namespace epm\database;
 
 abstract class Database implements DatabaseInterface
 {

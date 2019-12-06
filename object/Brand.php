@@ -2,8 +2,8 @@
 declare(strict_types = 1);
 namespace epm\object;
 
-use epm\core\data\Model;
-use epm\core\type\LString;
+use epm\data\Model;
+use epm\type\LString;
 
 class Brand extends Model
 {
@@ -58,7 +58,4 @@ class Brand extends Model
         $this->keywords = new LString();
         $this->title = new LString();
     }
-
-    public function load(array $data)
-    {}
 }

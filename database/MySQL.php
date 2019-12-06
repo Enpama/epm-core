@@ -1,9 +1,9 @@
 <?php
 declare(strict_types = 1);
-namespace epm\core\database;
+namespace epm\database;
 
 use PDO;
-use epm\core\lib\StringManipulation;
+use epm\lib\StringManipulation;
 
 class MySQL extends Database
 {

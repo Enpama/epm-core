@@ -1,6 +1,6 @@
 <?php
 declare(strict_types = 1);
-namespace epm\core\data;
+namespace epm\data;
 
 class Definition
 {

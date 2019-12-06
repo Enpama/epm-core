@@ -1,7 +1,8 @@
 <?php
 require ('vendor/autoload.php');
-use epm\core\lib\Settings;
+use epm\lib\Settings;
+use epm\database\ConnectionManager;
 
-echo Settings::get('database.name') . "\n";
-echo Settings::get('security.cookie_key') . "\n";
-echo Settings::get('test1.test2.test3') . "\n";
+$db = ConnectionManager::get();
+
+var_dump($db);
