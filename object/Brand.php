@@ -24,38 +24,29 @@ class Brand extends Model
      *
      * @var LString $description
      */
-    public $description;
+    public $description = null;
 
     /**
      *
      * @var LString $description_short
      */
-    public $description_short;
+    public $description_short = null;
 
     /**
      *
      * @var LString $title
      */
-    public $title;
+    public $title = null;
 
     /**
      *
      * @var LString $keywords
      */
-    public $keywords;
+    public $keywords = null;
 
     /**
      *
      * @var bool $show
      */
     public $show = true;
-
-    public function __construct(int $id = 0, int $lang_id = 0)
-    {
-        parent::__construct($id, $lang_id);
-        $this->description = new LString();
-        $this->description_short = new LString();
-        $this->keywords = new LString();
-        $this->title = new LString();
-    }
 }

@@ -2,8 +2,8 @@
 declare(strict_types = 1);
 namespace epm\database;
 
+use epm\lib\Str;
 use PDO;
-use epm\lib\StringManipulation;
 
 class MySQL extends Database
 {
@@ -63,7 +63,7 @@ class MySQL extends Database
     public function bindParam(string $parameter, string $variable, $type = \PDO::PARAM_STR, $length = null,
         $options = null): Database
     {
-        if (StringManipulation::startsWith($parameter, ':')) {
+        if (Str::startsWith($parameter, ':')) {
             $parameter = ':' . $parameter;
         }
         $this->statement->bindParam($parameter, $variable, $type, $length, $options);
